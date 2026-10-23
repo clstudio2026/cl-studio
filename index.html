@@ -113,12 +113,17 @@
         </div>
     </div>
 
-    <!-- Multi-Page Navigation Bar -->
-    <header class="pt-20 pb-4 px-6 max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between border-b border-gray-800/80 gap-4">
-        <div class="flex items-center space-x-3">
-            <div class="relative group w-10 h-10 rounded-xl overflow-hidden bg-zinc-900 border border-gray-800 flex items-center justify-center shrink-0">
-                <img id="site-logo-img" data-cms-id="site-logo-img" src="https://media.discordapp.net/attachments/1052974254662107248/1563286323517722624/LOGO_.jpg?ex=6add1357&is=6adbc1d7&hm=91b9e5207e073ccd984c377bda0b79a3e9894fc5a94d0c24d248871d0dbe34ce&=&format=webp&width=1024&height=1024" alt="Logo" class="w-full h-full object-cover rounded-xl">
-                <!-- 編輯模式下顯示的更換按鈕 -->
+  <!-- Multi-Page Navigation Bar -->
+<header class="pt-20 pb-4 px-6 max-w-7xl mx-auto w-full flex flex-col md:flex-row items-center justify-between border-b border-gray-800/80 gap-4">
+    <div class="flex items-center space-x-3">
+        <!-- 點擊圖片區塊啟用全頁自由編輯模式 -->
+        <div onclick="event.stopPropagation(); enableFullPageEditMode()" class="relative group w-10 h-10 rounded-xl overflow-hidden bg-zinc-900 border border-gray-800 flex items-center justify-center shrink-0 cursor-pointer">
+            <img id="site-logo-img" data-cms-id="site-logo-img" src="https://media.discordapp.net/attachments/1052974254662107248/1563286323517722624/LOGO_.jpg?ex=6add1357&is=6adbc1d7&hm=91b9e5207e073ccd984c377bda0b79a3e9894fc5a94d0c24d248871d0dbe34ce&=&format=webp&width=1024&height=1024" alt="Logo" class="w-full h-full object-cover rounded-xl transition group-hover:opacity-30">
+            <!-- 懸停時提示自由編輯 -->
+            <div class="absolute inset-0 text-white text-[10px] hidden group-hover:flex items-center justify-center font-bold text-center px-1 pointer-events-none">
+                自由編輯
+            </div>
+        </div>
                 <button onclick="event.stopPropagation(); changeImagePrompt('site-logo-img')" class="cms-btn absolute inset-0 bg-black/70 text-white text-[10px] hidden group-hover:flex items-center justify-center font-bold">
                     更換
                 </button>
